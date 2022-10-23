@@ -53,7 +53,17 @@ packer.startup({
 
     use("onsails/lspkind-nvim")
 
+    -- 格式化插件
     use({ "jose-elias-alvarez/null-ls.nvim", requires = "nvim-lua/plenary.nvim" })
+
+    -- java插件
+    use 'mfussenegger/nvim-jdtls'
+
+    -- json 插件
+    use("b0o/schemastore.nvim")
+
+    -- ts插件
+    use({ "jose-elias-alvarez/nvim-lsp-ts-utils", requires = "nvim-lua/plenary.nvim" })
 
   end,
   config = {

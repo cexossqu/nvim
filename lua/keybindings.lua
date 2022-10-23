@@ -1,6 +1,10 @@
 vim.g.mapleader = ";"
 vim.g.maplocalleader = ";"
 
+local uConfig = require("uConfig")
+
+local lsp = uConfig.lsp
+
 local map = vim.api.nvim_set_keymap
 -- 复用 opt 参数
 local opt = {noremap = true, silent = true }
@@ -55,6 +59,9 @@ map("t", "<A-l>", [[ <C-\><C-N><C-w>l ]], opt)
 -- visual模式下缩进代码
 map("v", "<", "<gv", opt)
 map("v", ">", ">gv", opt)
+
+-- visual 模式复制到系统剪贴板
+map("v", "C-y", "\"+y", opt)
 -- 上下移动选中文本
 map("v", "J", ":move '>+1<CR>gv-gv", opt)
 map("v", "K", ":move '<-2<CR>gv-gv", opt)
@@ -75,8 +82,8 @@ map("n", "qq", ":q!<CR>", opt)
 map("n", "Q", ":qa!<CR>", opt)
 
 -- insert 模式下，跳到行首行尾
-map("i", "<C-h>", "<ESC>I", opt)
-map("i", "<C-l>", "<ESC>A", opt)
+map("i", "<C-a>", "<ESC>I", opt)
+map("i", "<C-e>", "<ESC>A", opt)
 
 -- 左右Tab切换
 map("n", "<C-h>", ":BufferLineCyclePrev<CR>", opt)
@@ -116,6 +123,13 @@ pluginKeys.telescopeList = {
   },
 }
 
+-- typescript 快捷键
+--pluginKeys.mapTsLSP = function(bufnr)
+ -- local bufopts = { noremap = true, silent = true, buffer = bufnr }
+--keymap("n", lsp.ts_organize, ":TSLspOrganize<CR>", bufopts)
+--keymap("n", lsp.ts_rename_file, ":TSLspRenameFile<CR>", bufopts)
+--keymap("n", lsp.ts_add_missing_import, ":TSLspImportAll<CR>", bufopts)
+--end
 -- nvim-tree
 -- alt + m 键打开关闭tree
 map("n", "<A-m>", ":NvimTreeToggle<CR>", opt)

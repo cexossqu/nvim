@@ -25,7 +25,7 @@ mason.setup({
 -- mason-lspconfig uses the `lspconfig` server names in the APIs it exposes - not `mason.nvim` package names
 -- https://github.com/williamboman/mason-lspconfig.nvim/blob/main/doc/server-mapping.md
 mason_config.setup({
-    ensure_installed = {"sumneko_lua"}
+    ensure_installed = {"sumneko_lua", "cssls", "html", "emmet_ls", "jsonls", "tsserver"}
 })
 
 local lspconfig = require("lspconfig")
@@ -37,6 +37,11 @@ local lspconfig = require("lspconfig")
 local servers = {
     sumneko_lua = require("lsp.config.lua"), -- lua/lsp/config/lua.lua
     -- remark_ls = require("lsp.config.markdown"),
+    html = require("lsp.config.html"),
+    cssls = require("lsp.config.css"),
+    emmet_ls = require("lsp.config.emmet"),
+    jsonls = require("lsp.config.json"),
+    tsserver = require("lsp.config.ts"),
 }
 
 for name, config in pairs(servers) do
