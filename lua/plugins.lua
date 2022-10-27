@@ -9,7 +9,7 @@ packer.startup({
         'nvim-treesitter/nvim-treesitter',
         run = function() require('nvim-treesitter.install').update({ with_sync = true }) end,
     }
-    
+
     use("folke/tokyonight.nvim")
 
     use({ "kyazdani42/nvim-tree.lua", requires = "kyazdani42/nvim-web-devicons" })
@@ -64,6 +64,11 @@ packer.startup({
 
     -- ts插件
     use({ "jose-elias-alvarez/nvim-lsp-ts-utils", requires = "nvim-lua/plenary.nvim" })
+
+    -- markdown插件
+    use({ "iamcco/markdown-preview.nvim", run = "cd app && npm install", setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" }, })
+
+    use("img-paste-devs/img-paste.vim")
 
   end,
   config = {

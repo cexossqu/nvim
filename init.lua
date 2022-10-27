@@ -2,6 +2,7 @@ require('basic')
 
 require("keybindings")
 
+require("plugin-config.markdown")
 -- Packer 插件管理
 require("plugins")
 

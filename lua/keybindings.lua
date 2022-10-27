@@ -61,7 +61,7 @@ map("v", "<", "<gv", opt)
 map("v", ">", ">gv", opt)
 
 -- visual 模式复制到系统剪贴板
-map("v", "C-y", "\"+y", opt)
+map("v", "<leader>y", [["+y]], opt)
 -- 上下移动选中文本
 map("v", "J", ":move '>+1<CR>gv-gv", opt)
 map("v", "K", ":move '<-2<CR>gv-gv", opt)
@@ -95,6 +95,9 @@ map("n", "<leader>bl", ":BufferLineCloseRight<CR>", opt)
 map("n", "<leader>bh", ":BufferLineCloseLeft<CR>", opt)
 map("n", "<leader>bc", ":BufferLinePickClose<CR>", opt)
 
+
+-- markdown配置
+map("n", "<leader>p", ":call mdip#MarkdownClipboardImage()<CR>", opt)
 
 -- Telescope
 -- 查找文件
