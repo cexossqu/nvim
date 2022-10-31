@@ -25,7 +25,7 @@ mason.setup({
 -- mason-lspconfig uses the `lspconfig` server names in the APIs it exposes - not `mason.nvim` package names
 -- https://github.com/williamboman/mason-lspconfig.nvim/blob/main/doc/server-mapping.md
 mason_config.setup({
-    ensure_installed = {"sumneko_lua", "cssls", "html", "emmet_ls", "jsonls", "tsserver"}
+    ensure_installed = {"sumneko_lua", "cssls", "html", "emmet_ls", "jsonls", "tsserver", "volar"}
 })
 
 local lspconfig = require("lspconfig")
@@ -42,6 +42,7 @@ local servers = {
     emmet_ls = require("lsp.config.emmet"),
     jsonls = require("lsp.config.json"),
     tsserver = require("lsp.config.ts"),
+    volar = require("lsp.config.vue"),
 }
 
 for name, config in pairs(servers) do
