@@ -23,10 +23,10 @@ require("plugin-config.project")
 
 require("plugin-config.nvim-treesitter")
 
-require("lsp.setup")
+-- require("lsp.setup")
 
-require("lsp.cmp")
+-- require("lsp.cmp")
 
-require("lsp.ui")
+-- require("lsp.ui")
 
-require("lsp.null-ls")
+-- require("lsp.null-ls")
